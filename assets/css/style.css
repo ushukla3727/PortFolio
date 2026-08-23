@@ -1350,7 +1350,237 @@ input, textarea, select {
 }
 
 /* ============================================================
-   17. ANIMATIONS
+   18. WORK EXPERIENCE TIMELINE
+   ============================================================ */
+.experience-section { background-color: var(--bg) !important; }
+
+.exp-timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+/* Vertical line */
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--purple), var(--cyan), transparent);
+  border-radius: 2px;
+}
+
+/* Each row */
+.exp-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+.exp-item:last-child { margin-bottom: 0; }
+
+/* Dot on timeline */
+.exp-dot {
+  position: absolute;
+  left: -33px;
+  top: 26px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--border-p);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: border-color 0.3s var(--ease);
+}
+.exp-item:hover .exp-dot { border-color: var(--cyan); }
+.exp-dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  animation: dotPulse 2.5s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.6; }
+}
+
+/* Card */
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  transition: all 0.38s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--purple), var(--cyan));
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.exp-card:hover {
+  background: var(--bg-card-h);
+  border-color: var(--border-p);
+  transform: translateX(6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25), 0 0 20px var(--glow-p);
+}
+.exp-card:hover::before { opacity: 1; }
+
+/* Current job — special glow */
+.exp-card.current {
+  border-color: rgba(124, 58, 237, 0.28);
+  background: linear-gradient(135deg, rgba(124,58,237,0.07), rgba(6,182,212,0.03));
+}
+.exp-card.current::before { opacity: 1; }
+
+/* Meta row (badge + date) */
+.exp-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+.current-badge {
+  background: rgba(34, 197, 94, 0.14);
+  color: #4ade80;
+  border: 1px solid rgba(34,197,94,0.25);
+}
+.current-badge i { font-size: 0.5rem; animation: dotPulse 2s infinite; }
+.intern-badge {
+  background: rgba(6,182,212,0.12);
+  color: var(--cyan);
+  border: 1px solid rgba(6,182,212,0.22);
+}
+
+.exp-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-3);
+}
+.exp-duration {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 2px 10px;
+  border-radius: 50px;
+}
+
+/* Title row */
+.exp-role {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.exp-company {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  color: var(--purple-light);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.exp-company > i { font-size: 0.9rem; color: var(--purple-light); }
+.exp-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+/* Bullet points */
+.exp-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.exp-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-2) !important;
+  line-height: 1.7;
+}
+.exp-points li i {
+  font-size: 0.7rem;
+  color: var(--cyan);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+/* Tech tags */
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.exp-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-2);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 3px 11px;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s var(--ease);
+}
+.exp-card:hover .exp-tag {
+  border-color: rgba(124,58,237,0.2);
+  color: var(--text);
+  background: rgba(124,58,237,0.06);
+}
+
+@media (max-width: 576px) {
+  .exp-timeline { padding-left: 28px; }
+  .exp-timeline::before { left: 8px; }
+  .exp-dot { left: -25px; width: 14px; height: 14px; }
+  .exp-dot-inner { width: 5px; height: 5px; }
+  .exp-card { padding: 20px 18px; }
+  .exp-role { font-size: 1rem; }
+}
+
+/* ============================================================
+   19. ANIMATIONS
    ============================================================ */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(28px); }
