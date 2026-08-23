@@ -1,349 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Utkarsh Shukla — Game Developer Portfolio</title>
+  <meta name="description" content="Utkarsh Shukla - Game Developer with 3+ years of experience in Unity 3D, AR/VR, Multiplayer, Blockchain and AI-driven game development. 35+ projects delivered.">
+  <meta name="keywords" content="Game Developer, Unity 3D, AR VR, Multiplayer, Blockchain, Game Design, Utkarsh Shukla, Portfolio">
+  <meta property="og:title" content="Utkarsh Shukla — Game Developer Portfolio">
+  <meta property="og:description" content="Game Developer with 3+ years building immersive Unity, AR/VR, and Web3 experiences.">
+  <meta property="og:type" content="website">
 
-  <title>Utkarsh Shukla - Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Bootstrap CSS (required for grid: row, col-*, container) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- GLightbox -->
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- Swiper -->
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Custom Theme CSS (loads last to override Bootstrap) -->
   <link href="assets/css/style.css" rel="stylesheet">
-<script src='https://www.noupe.com/embed/019afe0d63d378568363189be8a16e87d6f1.js'></script>
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
+
+  <!-- ======= Preloader ======= -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-ring"></div>
+      <span class="preloader-text">US</span>
+    </div>
+  </div>
+
+  <!-- ======= Back To Top ======= -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">PortFolio</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="index.html" class="logo-link">
+        <div class="logo-monogram">US</div>
+      </a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
-          <li class="dropdown"><a href="assets/img/
-UTKARSH_SHUKLA_Resume (1).pdf"><span>Resume</span> <i
-                class="bi bi-chevron-down"></i></a>
-            <ul>
-              <!-- <li><a href="#">Drop Down 1</a></li> -->
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a> -->
-              <ul>
-                <!-- <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
-              </ul>
+          <li><a class="nav-link scrollto" href="#work">Work</a></li>
+          <li><a class="nav-link scrollto" href="#blog">Blog</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li>
+            <a href="assets/img/UTKARSH_SHUKLA_Resume (1).pdf" class="nav-resume-btn" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-file-earmark-person"></i>&nbsp;Resume
+            </a>
           </li>
-          <!-- <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li> -->
-        </ul>
-        </li>
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/New-Project.png)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am Utkarsh Shukla</h1>
-          <p class="hero-subtitle"><span class="typed"
-              data-typed-items="Game Programmer,Game Developer, Game Tester, Level Designer"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+  <!-- ======= Hero ======= -->
+  <section id="hero" class="hero-section">
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-inner text-center">
+
+          <div class="hero-badge" data-aos="fade-down" data-aos-duration="700">
+            <span class="badge-pulse"></span>
+            Available for new projects
+          </div>
+
+          <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            Hi, I'm <span class="gradient-text">Utkarsh Shukla</span>
+          </h1>
+
+          <div class="hero-typed-wrap" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <span class="typed-prefix">I'm a&nbsp;</span><span class="typed" data-typed-items="Game Programmer,Game Developer,Game Tester,Level Designer"></span>
+          </div>
+
+          <p class="hero-desc" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            Crafting immersive, intelligent &amp; impactful game experiences with <strong>Unity 3D</strong>, <strong>AR/VR</strong>, <strong>AI Integration</strong> &amp; <strong>Blockchain</strong> technology.
+          </p>
+
+          <div class="hero-actions" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <a href="#work" class="btn-primary-glow scrollto">
+              <i class="bi bi-controller"></i> View My Work
+            </a>
+            <a href="#contact" class="btn-outline-glow scrollto">
+              <i class="bi bi-chat-dots"></i> Let's Talk
+            </a>
+          </div>
+
+          <div class="hero-stats" data-aos="fade-up" data-aos-duration="800" data-aos-delay="520">
+            <div class="hero-stat-item">
+              <span class="stat-num">35+</span>
+              <span class="stat-lbl">Projects</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+              <span class="stat-num">3+</span>
+              <span class="stat-lbl">Years Exp.</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+              <span class="stat-num">11</span>
+              <span class="stat-lbl">Clients</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+              <span class="stat-num">2</span>
+              <span class="stat-lbl">Awards</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </div><!-- End Hero Section -->
+
+    <div class="hero-scroll-hint">
+      <a href="#about" class="scrollto">
+        <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+        <span>Scroll</span>
+      </a>
+    </div>
+  </section>
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
+    <!-- ======= About ======= -->
+    <section id="about" class="section about-section">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/pic.png" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Mr. Utkarsh Shukla</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Game Developer</span></p>
-                        <p><span class="title-s">Email: </span> <span>utkarshshukla92934@gmail.com</span></p>
-                        <p><span class="title-s">Phone: </span> <span>+91 9305420714</span></p>
-                      </div>
-                    </div>
+
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Who I Am</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Passionate developer turning ideas into immersive realities</p>
+        </div>
+
+        <div class="row g-5 align-items-start">
+
+          <!-- Photo + Info -->
+          <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+            <div class="about-photo-wrapper">
+              <div class="about-photo-glow"></div>
+              <img src="assets/img/pic.png" alt="Utkarsh Shukla" class="about-photo" loading="lazy">
+              <div class="about-info-badges">
+                <div class="info-badge">
+                  <i class="bi bi-person-badge"></i>
+                  <div>
+                    <span class="ib-label">Name</span>
+                    <span class="ib-value">Utkarsh Shukla</span>
                   </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-
-                    <span>Unity & Unreal Engine</span> <span class="pull-right">90%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>C# Programming</span> <span class="pull-right">85%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Multiplayer Development (Photon, Mirror, Socket)</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>AR/VR Development (Oculus, AR Foundation, Vuforia)</span> <span class="pull-right">75%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>AI & Machine Learning Integration</span> <span class="pull-right">70%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Blockchain Integration</span> <span class="pull-right">70%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Robotics & IoT Systems</span> <span class="pull-right">65%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Depth Tracking & Real-Time Sensing</span> <span class="pull-right">65%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Puzzle Game Development</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>3D Modeling & Animation Integration</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <span>Game Optimization & Profiling</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-
                 </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        About me
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      Passionate Game Developer with 3+ Years of Experience
-                      <br>
-                      <br>
-                      Greetings! I'm Utkarsh Shukla, a dedicated and innovative Game & Technology Developer driven by a
-                      passion for building immersive, intelligent, and impactful experiences. Over the past three years,
-                      I’ve successfully delivered 25+ projects across diverse domains — from games and AR/VR
-                      applications to AI-driven and IoT-enabled solutions.
-                    </p>
-                    <p class="lead">
-                      I possess deep expertise in Unity 3D, crafting everything from engaging gameplay mechanics and
-                      rich interactive environments to highly optimized multiplayer experiences. My work spans
-                      multiplayer game design, AI model integration, depth tracking systems, and real-time sensing
-                      applications, enabling cutting-edge features in both entertainment and industrial solutions.
-                    </p>
-                    <p class="lead">
-                      In addition to gaming, I’ve engineered AR/VR experiences with precise depth tracking for immersive
-                      simulations, integrated AI-driven logic for adaptive gameplay, and developed IoT-based real-time
-                      sensing systems that bridge the physical and digital worlds. My focus is always on delivering
-                      seamless, performant, and user-centric products that engage, inspire, and connect people globally.
-
-                      Whether it’s building competitive multiplayer games, creating next-gen AR/VR applications, or
-                      designing intelligent interactive systems, I thrive on transforming ideas into real, impactful
-                      experiences.
-                    </p>
+                <div class="info-badge">
+                  <i class="bi bi-controller"></i>
+                  <div>
+                    <span class="ib-label">Role</span>
+                    <span class="ib-value">Game Developer</span>
+                  </div>
+                </div>
+                <div class="info-badge">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <span class="ib-label">Email</span>
+                    <span class="ib-value">utkarshshukla92934@gmail.com</span>
+                  </div>
+                </div>
+                <div class="info-badge">
+                  <i class="bi bi-telephone"></i>
+                  <div>
+                    <span class="ib-label">Phone</span>
+                    <span class="ib-value">+91 9305420714</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Bio + Skills -->
+          <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
+            <div class="about-content">
+
+              <h3 class="about-heading">
+                Passionate Game Developer with <span class="gradient-text">3+ Years</span> of Experience
+              </h3>
+
+              <p class="about-text">
+                Greetings! I'm Utkarsh Shukla, a dedicated and innovative Game &amp; Technology Developer driven by a passion for building immersive, intelligent, and impactful experiences. Over the past three years, I've successfully delivered <strong>25+ projects</strong> across diverse domains — from games and AR/VR applications to AI-driven and IoT-enabled solutions.
+              </p>
+              <p class="about-text">
+                I possess deep expertise in <strong>Unity 3D</strong>, crafting everything from engaging gameplay mechanics and rich interactive environments to highly optimized multiplayer experiences. Whether it's building competitive multiplayer games, creating next-gen AR/VR apps, or designing intelligent interactive systems — I thrive on turning ideas into reality.
+              </p>
+
+              <!-- Skills -->
+              <div class="skills-wrap">
+                <h4 class="skills-heading">Technical Skills</h4>
+
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">Unity &amp; Unreal Engine</span><span class="skill-pct">90%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="90" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">C# Programming</span><span class="skill-pct">85%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="85" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">Multiplayer (Photon, Mirror, Socket)</span><span class="skill-pct">80%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="80" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">AR/VR (Oculus, AR Foundation, Vuforia)</span><span class="skill-pct">75%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="75" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">AI &amp; Machine Learning Integration</span><span class="skill-pct">70%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="70" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">Blockchain Integration</span><span class="skill-pct">70%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="70" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">3D Modeling &amp; Animation Integration</span><span class="skill-pct">60%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="60" style="width:0%"></div></div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-meta"><span class="skill-name">Game Optimization &amp; Profiling</span><span class="skill-pct">60%</span></div>
+                  <div class="skill-bar"><div class="skill-fill" data-width="60" style="width:0%"></div></div>
+                </div>
+              </div>
+
+              <div class="about-actions">
+                <a href="assets/img/UTKARSH_SHUKLA_Resume (1).pdf" class="btn-primary-glow" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-download"></i> Download Resume
+                </a>
+                <div class="about-socials">
+                  <a href="https://www.linkedin.com/in/utkarsh-shukla-b615191a0/" class="social-icon-btn" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/ushukla3727" class="social-icon-btn" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/Utkarsh930542" class="social-icon-btn" target="_blank" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="https://www.instagram.com/utkarsh_shukla1712/" class="social-icon-btn" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
+    <!-- ======= Services ======= -->
+    <section id="services" class="section services-section alt-bg">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Services
-              </h3>
-              <p class="subtitle-a">
-                Turning Ideas into Engaging, Intelligent & Immersive Experiences
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
+
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">What I Do</span>
+          <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+          <p class="section-subtitle">Turning Ideas into Engaging, Intelligent &amp; Immersive Experiences</p>
         </div>
-        <div class="row">
 
-          <!-- Game Design -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-joystick"></i></span>
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-card">
+              <div class="svc-icon-wrap"><i class="bi bi-joystick"></i></div>
+              <h3 class="svc-title">Game Design</h3>
+              <p class="svc-desc">From concept to mechanics, I craft gameplay experiences that are not only fun but strategically engaging. My designs focus on player retention, balanced challenges, and storytelling that leaves a lasting impact.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card featured">
+              <div class="svc-icon-wrap"><i class="bi bi-code-slash"></i></div>
+              <h3 class="svc-title">Game Development</h3>
+              <p class="svc-desc">End-to-end development in Unity 3D, covering single-player, multiplayer, AR/VR, and AI-powered gameplay. I focus on clean code, optimized performance, and delivering polished, ready-to-launch experiences.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="svc-icon-wrap"><i class="bi bi-people-fill"></i></div>
+              <h3 class="svc-title">Multiplayer Systems</h3>
+              <p class="svc-desc">Expertise in Photon, Mirror, and custom socket solutions to build seamless real-time multiplayer games. From matchmaking to leaderboards, I create systems that connect players globally.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-card">
+              <div class="svc-icon-wrap"><i class="bi bi-link-45deg"></i></div>
+              <h3 class="svc-title">Web3 &amp; Blockchain</h3>
+              <p class="svc-desc">Bringing blockchain to gaming with NFT assets, play-to-earn mechanics, and smart contract integration. Secure, scalable Web3 gaming experiences that enhance player ownership and monetization.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="svc-icon-wrap"><i class="bi bi-vr"></i></div>
+              <h3 class="svc-title">AR/VR &amp; Real-Time Sensing</h3>
+              <p class="svc-desc">Creating immersive AR/VR applications with depth tracking, motion capture, and IoT integration. Perfect for games, training simulations, and interactive experiences that blend physical and digital worlds.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="svc-icon-wrap"><i class="bi bi-speedometer2"></i></div>
+              <h3 class="svc-title">Optimization &amp; QA</h3>
+              <p class="svc-desc">Performance profiling, memory optimization, and thorough game testing to ensure smooth gameplay across platforms. My QA process eliminates bugs before launch, delivering a premium user experience.</p>
+              <div class="svc-arrow"><i class="bi bi-arrow-up-right"></i></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Counters ======= -->
+    <div class="counter-section">
+      <div class="container position-relative">
+        <div class="row g-4 text-center">
+
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0">
+            <div class="counter-box">
+              <div class="counter-icon-wrap"><i class="bi bi-check-circle-fill"></i></div>
+              <div class="counter-num-wrap">
+                <p class="counter purecounter" data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1">0</p>
+                <span class="counter-suffix">+</span>
               </div>
-              <div class="service-content">
-                <h2 class="s-title">Game Design</h2>
-                <p class="s-description text-center">
-                  From concept to mechanics, I craft gameplay experiences that are not only fun but strategically
-                  engaging.
-                  My designs focus on player retention, balanced challenges, and storytelling that leaves a lasting
-                  impact.
-                </p>
+              <span class="counter-label">Works Completed</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="150">
+            <div class="counter-box">
+              <div class="counter-icon-wrap"><i class="bi bi-calendar-check-fill"></i></div>
+              <div class="counter-num-wrap">
+                <p class="counter purecounter" data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1">0</p>
+                <span class="counter-suffix">+</span>
+              </div>
+              <span class="counter-label">Years of Experience</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="counter-box">
+              <div class="counter-icon-wrap"><i class="bi bi-people-fill"></i></div>
+              <div class="counter-num-wrap">
+                <p class="counter purecounter" data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1">0</p>
+              </div>
+              <span class="counter-label">Total Clients</span>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="450">
+            <div class="counter-box">
+              <div class="counter-icon-wrap"><i class="bi bi-award-fill"></i></div>
+              <div class="counter-num-wrap">
+                <p class="counter purecounter" data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1">0</p>
+              </div>
+              <span class="counter-label">Awards Won</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Portfolio ======= -->
+    <section id="work" class="section portfolio-section">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">My Projects</span>
+          <h2 class="section-title">Gaming <span class="gradient-text">Masterpieces</span></h2>
+          <p class="section-subtitle">A showcase of my most impactful game development work</p>
+        </div>
+
+        <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="game">Game Dev</button>
+          <button class="filter-btn" data-filter="web3">Web3</button>
+          <button class="filter-btn" data-filter="arvr">AR / VR</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-item" data-category="game" data-aos="fade-up" data-aos-delay="0">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-1.jpeg" alt="RoadMash Car Racing Game" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-1.jpeg" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="RoadMash"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/ushukla3727/RoadMash.git" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <span class="ptag game-tag">Game Development</span>
+                <h3 class="ptitle">RoadMash: Car Racing Game</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Sep 18, 2022</p>
               </div>
             </div>
           </div>
 
-          <!-- Game Development -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-code-slash"></i></span>
+          <div class="portfolio-item" data-category="game" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-2.jpeg" alt="ZigZagMash Infinite Road Game" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-2.jpeg" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="ZigZagMash"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/ushukla3727/ZigZagMash.git" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
               </div>
-              <div class="service-content">
-                <h2 class="s-title">Game Development</h2>
-                <p class="s-description text-center">
-                  End-to-end development in Unity 3D, covering single-player, multiplayer, AR/VR, and AI-powered
-                  gameplay.
-                  I focus on clean code, optimized performance, and delivering polished, ready-to-launch experiences.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Multiplayer Systems -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-people-fill"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Multiplayer Systems</h2>
-                <p class="s-description text-center">
-                  Expertise in Photon, Mirror, and custom socket solutions to build seamless real-time multiplayer
-                  games.
-                  From matchmaking to leaderboards, I create systems that connect players globally.
-                </p>
+              <div class="portfolio-info">
+                <span class="ptag game-tag">Game Development</span>
+                <h3 class="ptitle">ZigZagMash: Infinite Road Game</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Dec 01, 2022</p>
               </div>
             </div>
           </div>
 
-          <!-- Web3 & Blockchain -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-link-45deg"></i></span>
+          <div class="portfolio-item" data-category="game" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-3.jpeg" alt="Military Combat Third Person Shooter" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-3.jpeg" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="Military Combat"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://github.com/ushukla3727/Millatry_Combat.git" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                  </div>
+                </div>
               </div>
-              <div class="service-content">
-                <h2 class="s-title">Web3 & Blockchain Integration</h2>
-                <p class="s-description text-center">
-                  Bringing blockchain to gaming with NFT assets, play-to-earn mechanics, and smart contract integration.
-                  I create secure, scalable Web3 gaming experiences that enhance player ownership and monetization.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- AR/VR & Real-Time Sensing -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-vr"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">AR/VR & Real-Time Sensing</h2>
-                <p class="s-description text-center">
-                  Creating immersive AR/VR applications with depth tracking, motion capture, and IoT integration.
-                  Perfect for games, training simulations, and interactive experiences that blend physical and digital
-                  worlds.
-                </p>
+              <div class="portfolio-info">
+                <span class="ptag game-tag">Game Development</span>
+                <h3 class="ptitle">Military Combat: Third Person Shooter</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Jan 10, 2023</p>
               </div>
             </div>
           </div>
 
-          <!-- Game Optimization & QA -->
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-speedometer2"></i></span>
+          <div class="portfolio-item" data-category="game" data-aos="fade-up" data-aos-delay="0">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-4.jpeg" alt="King Crush An 2D Block Matching Game" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-4.jpeg" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="King Crush An"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://www.loom.com/share/20e36d8d1e864b91966bebfd6b195dd4?sid=8abd1b7f-4d54-4bbb-9c30-4bc2e53cd425" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-play-circle-fill"></i></a>
+                  </div>
+                </div>
               </div>
-              <div class="service-content">
-                <h2 class="s-title">Optimization & QA</h2>
-                <p class="s-description text-center">
-                  Performance profiling, memory optimization, and thorough game testing to ensure smooth gameplay across
-                  platforms.
-                  My QA process eliminates bugs before launch, delivering a premium user experience.
-                </p>
+              <div class="portfolio-info">
+                <span class="ptag game-tag">Game Development</span>
+                <h3 class="ptitle">King Crush An: 2D Block Matching Game</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Nov 09, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="game" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-5.jpeg" alt="My Gamer Life Story Telling Game" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-5.jpeg" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="My Gamer Life"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.game.MyGamerLife&hl=en_IN" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-google-play"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <span class="ptag live-tag">Game Dev · Live on Play Store</span>
+                <h3 class="ptitle">My Gamer Life: Story Telling Game</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Jan 10, 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="arvr" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-6.png" alt="Energy Storage Real-Time Body Tracking" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-6.png" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="Energy Storage Game"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://www.loom.com/share/7945c4f3b0d5412ba147316907b200ee?sid=5f44e53a-52f0-434b-8594-26bdbf969b9b" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-play-circle-fill"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <span class="ptag arvr-tag">AR/VR · Body Tracking</span>
+                <h3 class="ptitle">Energy Storage: Real-Time Body Tracking</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Jul 01, 2025</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="web3" data-aos="fade-up" data-aos-delay="0">
+            <div class="portfolio-card">
+              <div class="portfolio-img-wrap">
+                <img src="assets/img/work-9.png" alt="Web3Warfare Web3 Combat Game" class="portfolio-img" loading="lazy">
+                <div class="portfolio-overlay">
+                  <div class="overlay-btns">
+                    <a href="assets/img/work-9.png" class="ovr-btn portfolio-lightbox" data-gallery="portfolioGallery" title="Web3Warfare"><i class="bi bi-zoom-in"></i></a>
+                    <a href="https://adressableasset.s3.eu-north-1.amazonaws.com/Web3Warfare/Game/index.html" class="ovr-btn" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <span class="ptag web3-tag">Web3 · Combat Game</span>
+                <h3 class="ptitle">Web3Warfare: A Web3 Combat Game</h3>
+                <p class="pdate"><i class="bi bi-calendar3"></i>&nbsp;Aug 01, 2023</p>
               </div>
             </div>
           </div>
@@ -352,567 +550,263 @@ UTKARSH_SHUKLA_Resume (1).pdf"><span>Resume</span> <i
       </div>
     </section>
 
-
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container position-relative">
-        <div class="row">
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-check"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
-                <span class="counter-text">WORKS COMPLETED</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
-                <span class="counter-text">YEARS OF EXPERIENCE</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-people"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="11" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
-                <span class="counter-text">TOTAL CLIENTS</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-award"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1"
-                  class="counter purecounter"></p>
-                <span class="counter-text">AWARD WON</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Counter Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
+    <!-- ======= Testimonials ======= -->
+    <div class="testimonials-section alt-bg">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Portfolio
-              </h3>
-              <p class="subtitle-a">
-                Explore Our Gaming Masterpieces"
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
+
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Social Proof</span>
+          <h2 class="section-title">Client <span class="gradient-text">Reviews</span></h2>
+          <p class="section-subtitle">What my clients say about working with me</p>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-1.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-1.jpeg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://github.com/ushukla3727/RoadMash.git"> <h2 class="w-title">RoadMash : Car Racing Game</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">18 Sep. 2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/ushukla3727/RoadMash.git"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-2.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-2.jpeg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://github.com/ushukla3727/ZigZagMash.git"> <h2 class="w-title">ZigZagMash : ZigZag Infinite Road Game</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">01 Dec. 2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/ushukla3727/ZigZagMash.git"> <span
-                          class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-3.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-3.jpeg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://github.com/ushukla3727/Millatry_Combat.git"> <h2 class="w-title">Millatry Combat : Third Person Shootor Game</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">10 Jan. 2023</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/ushukla3727/Millatry_Combat.git"> <span
-                          class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-4.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-4.jpeg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://www.loom.com/share/20e36d8d1e864b91966bebfd6b195dd4?sid=8abd1b7f-4d54-4bbb-9c30-4bc2e53cd425"> <h2 class="w-title">King Crush An : 2d Block Matching Game</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">9 Nav. 2024</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://www.loom.com/share/20e36d8d1e864b91966bebfd6b195dd4?sid=8abd1b7f-4d54-4bbb-9c30-4bc2e53cd425"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-5.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-5.jpeg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://play.google.com/store/apps/details?id=com.game.MyGamerLife&hl=en_IN"> <h2 class="w-title">My Gamer Life : Story Telling Game  </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development          </span> / <span class="w-date">10 Jan. 2025</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://play.google.com/store/apps/details?id=com.game.MyGamerLife&hl=en_IN"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-6.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-6.png" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <a href="https://www.loom.com/share/7945c4f3b0d5412ba147316907b200ee?sid=5f44e53a-52f0-434b-8594-26bdbf969b9b"> <h2 class="w-title">Energy Storage Game : Realtime Body Tracking</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">01 July. 2025</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://www.loom.com/share/7945c4f3b0d5412ba147316907b200ee?sid=5f44e53a-52f0-434b-8594-26bdbf969b9b"> <span
-                          class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-       
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
 
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-9.png" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-9.png" alt="" class="img-fluid">
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testi-quote"><i class="bi bi-quote"></i></div>
+                <p class="testi-text">Utkarsh Shukla is a visionary in the gaming industry. His creativity knows no bounds, and he turns concepts into immersive game experiences that are truly remarkable.</p>
+                <div class="testi-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                   <a href="https://adressableasset.s3.eu-north-1.amazonaws.com/Web3Warfare/Game/index.html"><h2 class="w-title">Web3Warfare : A Web3 Comabt Game </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Game Development</span> / <span class="w-date">01 August. 2023</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://adressableasset.s3.eu-north-1.amazonaws.com/Web3Warfare/Game/index.html"> <span
-                          class="bi bi-plus-circle"></span></a>
-                    </div>
+                <div class="testi-author">
+                  <img src="assets/img/testimonial-2.jpg" alt="Himanshu Kashyap" class="testi-avatar" loading="lazy">
+                  <div>
+                    <span class="author-name">Himanshu Kashyap</span>
+                    <span class="author-role">Game Studio Client</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div class="swiper-slide">
+              <div class="testimonial-card">
+                <div class="testi-quote"><i class="bi bi-quote"></i></div>
+                <p class="testi-text">Working with Utkarsh was an absolute pleasure. His expertise in game development is matched only by his commitment to excellence. He's a game-changer in every sense.</p>
+                <div class="testi-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <div class="testi-author">
+                  <img src="assets/img/testimonial-4.jpg" alt="Marta Socrate" class="testi-avatar" loading="lazy">
+                  <div>
+                    <span class="author-name">Marta Socrate</span>
+                    <span class="author-role">International Client</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-    </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <div class="testimonials paralax-mf bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <div class="testimonial-box">
-                    <div class="author-test">
-                      <img src="assets/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Himanshu Kashyap</span>
-                    </div>
-                    <div class="content-test">
-                      <p class="description lead">
-                        Utkarsh Shukla is a visionary in the gaming industry. His creativity knows no bounds,
-                        and he turns concepts into immersive game experiences that are truly remarkable..
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                  <div class="testimonial-box">
-                    <div class="author-test">
-                      <img src="assets/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
-                      <span class="author">Marta Socrate</span>
-                    </div>
-                    <div class="content-test">
-                      <p class="description lead">
-                        Working with Utkarsh was an absolute pleasure. His expertise in game development is matched only
-                        by
-                        his commitment to excellence. He's a game-changer in every sense.
-                      </p>
-                    </div>
-                  </div>
-                </div><!-- End testimonial item -->
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-
-            <!-- <div id="testimonial-mf" class="owl-carousel owl-theme">
-          
-        </div> -->
-          </div>
-        </div>
-      </div>
-    </div><!-- End Testimonials Section -->
-
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Blog
-              </h3>
-              <p class="subtitle-a">
-                Navigating the Ever-Evolving World of Gaming.
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/AI.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">AI In Gaming</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="AIBlog.html">Future of Artificial Intelligence in the Gaming
-                    Industry</a></h3>
-                <p class="card-description">
-                  The gaming industry is on the brink of a significant transformation, and at its heart is the
-                  integration of Artificial Intelligence (AI)
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/pic.png" alt="" class="avatar rounded-circle">
-                    <span class="author">Utkarsh Shukla</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/Metaverse.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Metaverse</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="metverse.html">Metaverse : Unlocking Boundless Realms, One Digital Step
-                    at a Time</a></h3>
-                <p class="card-description">
-                  The Metaverse is an exciting and visionary concept that's currently reshaping the way we interact with
-                  the digital world.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/pic.png" alt="" class="avatar rounded-circle">
-                    <span class="author">Utkarsh Shukla</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="blog-single.html"><img src="assets/img/NFT.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Web3 Gaming</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="NFT.html">WEB3 Evalution : NFTs and Blockchain in Gaming</a></h3>
-                <p class="card-description">
-                  Non-fungible tokens (NFTs) are entering the gaming scene, allowing players to own and trade in-game
-                  assets
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="#">
-                    <img src="assets/img/pic.png" alt="" class="avatar rounded-circle">
-                    <span class="author">Utkarsh Shukla</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="bi bi-clock"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section><!-- End Blog Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route"
-      style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Send Message Us
-                      </h5>
-                    </div>
-                    <div>
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                                required>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                required></textarea>
-                            </div>
-                          </div>
-                          <div class="col-md-12 text-center my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
-                          </div>
-                          <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Get in Touch
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        We're excited to hear from you and explore how we can collaborate on your next gaming project.
-                        Whether you have a game development idea, need consultation on integrating cutting-edge
-                        technology,
-                        or just want to discuss the latest trends in the gaming industry, we're here to connect and
-                        share our
-                        passion for gaming. Feel free to reach out to us, and let's bring your gaming dreams to life
-                        together.
-                        Your ideas are the catalyst for our next creative journey!
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> Bakshi Ka Talab , Lucknow</li>
-                        <li><span class="bi bi-phone"></span> +91 9305420714</li>
-                        <li><span class="bi bi-envelope"></span>utkarshshukla92934@gmail.com</li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href="https://www.facebook.com/uttkarsh.shukla.12"><span class="ico-circle"><i
-                                class="bi bi-facebook"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/utkarsh_shukla1712/"><span class="ico-circle"><i
-                                class="bi bi-instagram"></i></span></a></li>
-                        <li><a href="https://twitter.com/Utkarsh930542"><span class="ico-circle"><i
-                                class="bi bi-twitter"></i></span></a></li>
-                        <li><a href="https://www.linkedin.com/in/utkarsh-shukla-b615191a0/"><span class="ico-circle"><i
-                                class="bi bi-linkedin"></i></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong></strong>. All Rights Reserved</p>
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-              Designed by <a href="">Utkarsh Shukla</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </footer><!-- End  Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <!-- ======= Blog ======= -->
+    <section id="blog" class="section blog-section">
+      <div class="container">
 
-  <!-- Vendor JS Files -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Knowledge Hub</span>
+          <h2 class="section-title">Latest <span class="gradient-text">Articles</span></h2>
+          <p class="section-subtitle">Navigating the Ever-Evolving World of Gaming</p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+            <div class="blog-card">
+              <div class="blog-img-wrap">
+                <img src="assets/img/AI.png" alt="AI in Gaming" class="blog-img" loading="lazy">
+                <span class="blog-cat-badge ai-badge">AI in Gaming</span>
+              </div>
+              <div class="blog-body">
+                <h3 class="blog-title"><a href="AIBlog.html">Future of Artificial Intelligence in the Gaming Industry</a></h3>
+                <p class="blog-excerpt">The gaming industry is on the brink of a significant transformation, and at its heart is the integration of Artificial Intelligence (AI)...</p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/pic.png" alt="Utkarsh Shukla" class="blog-avatar" loading="lazy">
+                    <span>Utkarsh Shukla</span>
+                  </div>
+                  <a href="AIBlog.html" class="blog-read-more">Read <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="blog-card">
+              <div class="blog-img-wrap">
+                <img src="assets/img/Metaverse.jpg" alt="Metaverse" class="blog-img" loading="lazy">
+                <span class="blog-cat-badge meta-badge">Metaverse</span>
+              </div>
+              <div class="blog-body">
+                <h3 class="blog-title"><a href="metverse.html">Metaverse: Unlocking Boundless Realms, One Digital Step at a Time</a></h3>
+                <p class="blog-excerpt">The Metaverse is an exciting and visionary concept that's reshaping the way we interact with the digital world...</p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/pic.png" alt="Utkarsh Shukla" class="blog-avatar" loading="lazy">
+                    <span>Utkarsh Shukla</span>
+                  </div>
+                  <a href="metverse.html" class="blog-read-more">Read <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="blog-card">
+              <div class="blog-img-wrap">
+                <img src="assets/img/NFT.png" alt="Web3 Gaming and NFTs" class="blog-img" loading="lazy">
+                <span class="blog-cat-badge web3-badge">Web3 Gaming</span>
+              </div>
+              <div class="blog-body">
+                <h3 class="blog-title"><a href="NFT.html">Web3 Evolution: NFTs and Blockchain in Gaming</a></h3>
+                <p class="blog-excerpt">Non-fungible tokens (NFTs) are entering the gaming scene, allowing players to own and trade in-game assets like never before...</p>
+                <div class="blog-footer">
+                  <div class="blog-author">
+                    <img src="assets/img/pic.png" alt="Utkarsh Shukla" class="blog-avatar" loading="lazy">
+                    <span>Utkarsh Shukla</span>
+                  </div>
+                  <a href="NFT.html" class="blog-read-more">Read <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact ======= -->
+    <section id="contact" class="section contact-section alt-bg">
+      <div class="container">
+
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+          <p class="section-subtitle">Ready to bring your game idea to life? Let's connect!</p>
+        </div>
+
+        <div class="row g-5">
+
+          <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900">
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h4>Location</h4>
+                  <p>Bakshi Ka Talab, Lucknow, India</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="ci-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <h4>Phone</h4>
+                  <p><a href="tel:+919305420714">+91 9305420714</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div>
+                  <h4>Email</h4>
+                  <p><a href="mailto:utkarshshukla92934@gmail.com">utkarshshukla92934@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-social-wrap">
+              <h4>Follow Me</h4>
+              <div class="social-links-row">
+                <a href="https://www.facebook.com/uttkarsh.shukla.12" class="social-link-btn fb" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/utkarsh_shukla1712/" class="social-link-btn ig" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://twitter.com/Utkarsh930542" class="social-link-btn tw" target="_blank" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.linkedin.com/in/utkarsh-shukla-b615191a0/" class="social-link-btn li" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/ushukla3727" class="social-link-btn gh" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
+            <div class="contact-form-wrap">
+              <form action="forms/contact.php" method="post" class="contact-form php-email-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group-modern">
+                      <label for="name">Your Name</label>
+                      <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group-modern">
+                      <label for="email">Your Email</label>
+                      <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group-modern">
+                      <label for="subject">Subject</label>
+                      <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group-modern">
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" class="form-input form-textarea" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12 text-center">
+                    <div class="loading">Sending...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <button type="submit" class="btn-primary-glow btn-submit">
+                      <i class="bi bi-send-fill"></i> Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer class="site-footer">
+    <div class="footer-top-line"></div>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo-monogram sm">US</div>
+          <span class="footer-name">Utkarsh Shukla</span>
+        </div>
+        <p class="footer-copy">&copy; 2025 Utkarsh Shukla. All Rights Reserved. Crafted with <i class="bi bi-heart-fill"></i> &amp; passion.</p>
+        <nav class="footer-nav">
+          <a href="#hero" class="scrollto">Home</a>
+          <a href="#about" class="scrollto">About</a>
+          <a href="#work" class="scrollto">Work</a>
+          <a href="#blog" class="scrollto">Blog</a>
+          <a href="#contact" class="scrollto">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js"></script>
 
 </body>
-
-
 </html>
-
-
-
