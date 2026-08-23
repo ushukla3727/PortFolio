@@ -731,7 +731,13 @@
 
           <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
             <div class="contact-form-wrap">
-              <form action="forms/contact.php" method="post" class="contact-form php-email-form">
+              <form id="contact-form" class="contact-form">
+                <!-- Web3Forms Access Key - works on GitHub Pages (no PHP needed) -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                <input type="hidden" name="subject" value="New Portfolio Contact Message">
+                <input type="hidden" name="from_name" value="Utkarsh Shukla Portfolio">
+                <input type="checkbox" name="botcheck" style="display:none">
+
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-group-modern">
@@ -758,10 +764,10 @@
                     </div>
                   </div>
                   <div class="col-12 text-center">
-                    <div class="loading">Sending...</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit" class="btn-primary-glow btn-submit">
+                    <div class="form-status loading" id="form-loading" style="display:none">Sending...</div>
+                    <div class="form-status error-message" id="form-error" style="display:none"></div>
+                    <div class="form-status sent-message" id="form-success" style="display:none">&#10003; Message sent! I'll get back to you soon.</div>
+                    <button type="submit" class="btn-primary-glow btn-submit" id="form-submit-btn">
                       <i class="bi bi-send-fill"></i> Send Message
                     </button>
                   </div>
@@ -803,7 +809,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- php-email-form removed: using Web3Forms API instead -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/portfolio.js"></script>

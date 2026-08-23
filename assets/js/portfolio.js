@@ -130,4 +130,64 @@
     fills.forEach(function (f) { observer.observe(f); });
   });
 
+  /* ── 5. Contact Form — Web3Forms API (works on GitHub Pages) ── */
+  document.addEventListener('DOMContentLoaded', function () {
+    var form    = document.getElementById('contact-form');
+    if (!form) return;
+
+    var btnEl     = document.getElementById('form-submit-btn');
+    var loadingEl = document.getElementById('form-loading');
+    var errorEl   = document.getElementById('form-error');
+    var successEl = document.getElementById('form-success');
+
+    function showState(state, msg) {
+      loadingEl.style.display = 'none';
+      errorEl.style.display   = 'none';
+      successEl.style.display = 'none';
+      if (state === 'loading') { loadingEl.style.display = 'block'; }
+      if (state === 'error')   { errorEl.textContent = msg || 'Something went wrong. Try again.'; errorEl.style.display = 'block'; }
+      if (state === 'success') { successEl.style.display = 'block'; }
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Validate access key is set
+      var keyInput = form.querySelector('input[name="access_key"]');
+      if (!keyInput || keyInput.value === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+        showState('error', '⚠️ Please set your Web3Forms access key in index.html');
+        return;
+      }
+
+      showState('loading');
+      btnEl.disabled = true;
+
+      var formData = new FormData(form);
+      var object   = {};
+      formData.forEach(function (val, key) { object[key] = val; });
+      var json = JSON.stringify(object);
+
+      fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    json
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          showState('success');
+          form.reset();
+        } else {
+          showState('error', data.message || 'Failed to send. Please try again.');
+        }
+      })
+      .catch(function () {
+        showState('error', 'Network error. Please check your connection and try again.');
+      })
+      .finally(function () {
+        btnEl.disabled = false;
+      });
+    });
+  });
+
 })();
