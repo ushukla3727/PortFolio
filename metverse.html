@@ -1,331 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Utkarsh Shukla - Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Vendor CSS Files -->
+  <title>Metaverse: Unlocking Boundless Realms, One Digital Step at a Time — Utkarsh Shukla</title>
+  <meta name="description" content="The Metaverse is not just the next chapter of the internet — it is the next chapter of human interaction.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
+  
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <!-- Blog-specific inline styles -->
+  <style>
+/* Blog page body */
+body { background: #09090f; color: #f1f5f9; font-family: 'Inter', sans-serif; }
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+/* Blog Hero */
+.blog-hero { 
+  min-height: 320px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.08) 100%), #0d0d1c;
+  display: flex; align-items: center;
+  padding: 100px 0 60px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Article card */
+.article-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+/* Featured image */
+.article-img {
+  width: 100%; border-radius: 12px;
+  margin-bottom: 36px;
+  box-shadow: 0 0 40px rgba(124,58,237,0.2);
+  object-fit: cover;
+  max-height: 420px;
+}
+
+/* Article paragraphs */
+.article-body p {
+  color: #94a3b8; line-height: 1.9; margin-bottom: 20px; font-size: 1rem;
+}
+
+/* Section headings in article */
+.article-body h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: #f1f5f9; margin: 32px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #7c3aed, #06b6d4) 1;
+}
+
+/* Blockquote */
+.article-body blockquote {
+  border-left: 4px solid #7c3aed;
+  background: rgba(124,58,237,0.08);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-style: italic;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Sidebar card */
+.sidebar-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.sidebar-card h5 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  color: #9d5cf5; margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Author card */
+.author-photo {
+  width: 70px; height: 70px; border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(124,58,237,0.4);
+  margin-bottom: 12px;
+}
+.author-name { font-weight: 700; color: #f1f5f9; font-size: 0.95rem; }
+.author-role { font-size: 0.78rem; color: #64748b; }
+
+/* Recent posts list */
+.recent-post-link {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #94a3b8; font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s;
+  line-height: 1.5;
+}
+.recent-post-link:last-child { border-bottom: none; }
+.recent-post-link:hover { color: #9d5cf5; }
+.recent-post-link i { color: #7c3aed; font-size: 0.7rem; margin-top: 4px; flex-shrink: 0; }
+
+/* Tag pills */
+.tag-pill {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 600;
+  padding: 4px 12px; border-radius: 50px;
+  background: rgba(124,58,237,0.1);
+  border: 1px solid rgba(124,58,237,0.2);
+  color: #9d5cf5;
+  margin: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.tag-pill:hover { background: rgba(124,58,237,0.25); color: #f1f5f9; }
+
+/* Article meta row */
+.article-meta {
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  padding: 16px 0; margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: #64748b; }
+.meta-item i { color: #7c3aed; }
+.meta-item a { color: #94a3b8; text-decoration: none; }
+.meta-item a:hover { color: #9d5cf5; }
+
+/* Category badge */
+.blog-hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 50px; padding: 5px 16px;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: #9d5cf5; margin-bottom: 16px;
+}
+
+/* Back to top */
+.back-to-top { 
+  position: fixed; right: 20px; bottom: 20px; z-index: 996;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  color: #fff !important; font-size: 1.4rem;
+  opacity: 0; visibility: hidden;
+  transition: all 0.4s; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 20px rgba(124,58,237,0.35);
+  text-decoration: none;
+}
+.back-to-top.active { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-4px); }
+
+/* Simple dark footer */
+.blog-footer {
+  background: #09090f;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 28px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+.blog-footer p { color: #64748b; font-size: 0.82rem; margin: 0; }
+.blog-footer a { color: #9d5cf5; text-decoration: none; }
+  </style>
 </head>
-
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">PortFolio</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="index.html" class="logo-link">
+        <div class="logo-monogram">US</div>
+      </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html">Services</a></li>
-          <li><a class="nav-link scrollto " href="index.html">Work</a></li>
-          <li><a class="nav-link scrollto " href="">Blog</a></li>
-          <li class="dropdown"><a href="assets/img/UTKARSH_SHUKLA_Resume.pdf"><span>Resume</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <!-- <li><a href="#">Drop Down 1</a></li> -->
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a> -->
-                <ul>
-                  <!-- <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li> -->
-                </ul>
-              </li>
-              <!-- <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li> -->
-            </ul>
+          <li><a class="nav-link" href="index.html#hero">Home</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li><a class="nav-link" href="index.html#services">Services</a></li>
+          <li><a class="nav-link" href="index.html#work">Work</a></li>
+          <li><a class="nav-link active" href="index.html#blog">Blog</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li>
+            <a href="assets/img/UTKARSH_SHUKLA_Resume (1).pdf" class="nav-resume-btn" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-file-earmark-person"></i>&nbsp;Resume
+            </a>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h2 class="hero-title mb-4">Metaverse : Unlocking Boundless Realms, One Digital Step at a Time</h2>
-          <ol class="breadcrumb d-flex justify-content-center">
-            <li class="breadcrumb-item">
-              <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">Library</a>
-            </li>
-            <li class="breadcrumb-item active">Data</li>
-          </ol>
-        </div>
+  <!-- Blog Hero -->
+  <section class="blog-hero" style="padding-top: 80px;">
+    <div class="container text-center">
+      <div class="blog-hero-badge"><i class="bi bi-bookmark-star"></i> Metaverse</div>
+      <h1 style="color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 2.5rem; margin-bottom: 20px;">Metaverse: Unlocking Boundless Realms, One Digital Step at a Time</h1>
+      <div class="article-meta justify-content-center" style="border: none;">
+        <span class="meta-item"><i class="bi bi-person"></i> Utkarsh Shukla</span>
+        <span class="meta-item"><i class="bi bi-calendar3"></i> October 2023</span>
       </div>
     </div>
-  </div>
+  </section>
 
-  <main id="main">
-
-    <!-- ======= Blog Single Section ======= -->
-    <section class="blog-wrapper sect-pt4" id="blog">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="post-box">
-              <div class="post-thumb">
-                <img src="assets/img/Metaverse.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="post-meta">
-                <h1 class="article-title">Metaverse : Unlocking Boundless Realms, One Digital Step at a Time</h1>
-                <ul>
-                  <li>
-                    <span class="bi bi-person"></span>
-                    <a href="#">Utkarsh Shukla</a>
-                  </li>
-                  <li>
-                    <span class="bi bi-tag"></span>
-                    <a href="#">Game Developer</a>
-                  </li>
-                  <li>
-                    <span class="bi bi-chat-left-text"></span>
-                    <a href="#">13</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="article-content">
-                <p>
-                  The concept of the "metaverse" has been a recurring theme in science fiction, from William Gibson's
-                  Neuromancer to Ernest Cline's Ready Player One. However, what was once the stuff of imagination is now
-                  rapidly becoming a reality. The metaverse represents a convergence of digital technology, augmented
-                  reality, virtual reality, and social interaction, offering a limitless digital universe for people to
-                  explore, work, and play in entirely new ways. This article explores the burgeoning concept of the
-                  metaverse and its potential to reshape our lives, step by digital step.
-                </p>
-                <p>
-                  Defining the Metaverse
-                  <br>
-                  The metaverse is not a singular virtual world but a network of interconnected digital spaces where
-                  people can interact, socialize, work, and play. It's a collective term that encompasses virtual
-                  reality (VR), augmented reality (AR), online gaming, social media, and other digital platforms. The
-                  metaverse strives to create a seamless blend of our physical and digital realities, offering immersive
-                  experiences beyond our current understanding.
-                </p>
-                <p>
-                  Digital Realities
-                  <br>
-                  VR and AR technologies are fundamental to the metaverse, enabling users to enter entirely digital
-                  spaces or overlay digital information on the real world. These technologies are not confined to
-                  gaming; they are finding applications in education, healthcare, remote work, and even socializing. As
-                  the hardware and software supporting these technologies continue to evolve, the boundaries of the
-                  metaverse will expand.
-                </p>
-                <p>
-                  Social Interaction
-                  <br>
-                  A key component of the metaverse is the capacity for people to interact with one another within these
-                  digital realms. It's not just about playing games or attending meetings; it's about creating genuine
-                  connections in the digital domain. Virtual events, gatherings, and social hubs within the metaverse
-                  offer unique opportunities for people to meet, collaborate, and socialize.
-                </p>
-                <blockquote class="blockquote">
-                  <p class="mb-0">As the metaverse gradually materializes, it offers a multifaceted landscape of digital
-                    possibilities, transforming the way we live, work, and connect in the ever-expanding realm of the
-                    virtual.
-                  </p>
-                </blockquote>
-                <p>
-                  Economic Opportunities
-                  <br>
-                  The metaverse isn't just about leisure; it's a thriving economic ecosystem. Virtual real estate,
-                  digital goods, and services are becoming a significant market. Businesses are already establishing a
-                  presence in the metaverse, from selling virtual fashion to hosting digital conferences. As the
-                  metaverse evolves, it will create new job opportunities and transform traditional business models.
-              </div>
-            </div>
-
-            <div class="form-comments">
-              <div class="title-box-2">
-                <h3 class="title-left">
-                  Leave a Reply
-                </h3>
-              </div>
-              <form class="form-mf">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <div class="form-group">
-                      <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website">
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message"
-                        cols="45" rows="8" required></textarea>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="widget-sidebar sidebar-search">
-              <h5 class="sidebar-title">Search</h5>
-              <div class="sidebar-content">
-                <form>
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary btn-search" type="button">
-                        <span class="bi bi-search"></span>
-                      </button>
-                    </span>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="widget-sidebar">
-              <h5 class="sidebar-title">Recent Post</h5>
-              <div class="sidebar-content">
-                <ul class="list-sidebar">
-                  <li>
-                    <a href="#">AI In Gaming .</a>
-                  </li>
-                  <li>
-                    <a href="#">Metaverse</a>
-                  </li>
-                  <li>
-                    <a href="#">NFT And Crypto in gaming</a>
-                  </li>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="widget-sidebar">
-              <h5 class="sidebar-title">Archives</h5>
-              <div class="sidebar-content">
-                <ul class="list-sidebar">
-                  <li>
-                    <a href="#">September, 2022.</a>
-                  </li>
-                  <li>
-                    <a href="#">April, 2023.</a>
-                  </li>
-                  <li>
-                    <a href="index.html">Home.</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="widget-sidebar widget-tags">
-              <h5 class="sidebar-title">Tags</h5>
-              <div class="sidebar-content">
-                <ul>
-                  <li>
-                    <a href="#">Game</a>
-                  </li>
-                  <li>
-                    <a href="#">Design.</a>
-                  </li>
-                  <li>
-                    <a href="#">Development</a>
-                  </li>
-                  <li>
-                    <a href="#">Testing</a>
-                  </li>
-                  <li>
-                    <a href="#">C#</a>
-                  </li>
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+  <!-- Article Content -->
+  <main class="container" style="margin-top: 40px; min-height: 50vh;">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="article-card article-body">
+          <img src="assets/img/Metaverse.jpg" alt="Metaverse: Unlocking Boundless Realms, One Digital Step at a Time" class="article-img">
+          
+          <p>The concept of the Metaverse has evolved from a sci-fi trope to a tangible digital frontier. It is often described as a collective, persistent, and immersive virtual space where physical and digital realities converge. As technology advances, this interconnected web of 3D worlds promises to transform how we live, work, and socialize.</p>
+          
+          <h2>What is the Metaverse</h2>
+          <p>At its core, the Metaverse is the next iteration of the internet — transitioning from 2D web pages to immersive 3D environments. It encompasses virtual reality (VR), augmented reality (AR), and mixed reality (MR) experiences that allow users to exist as avatars in shared virtual spaces. In this realm, the constraints of physical distance dissolve, enabling seamless interaction and exploration across countless interconnected digital realms.</p>
+          
+          <h2>Gaming as the Gateway to the Metaverse</h2>
+          <p>The gaming industry has been the vanguard of the Metaverse. Massively multiplayer online games and expansive virtual worlds like Roblox, Fortnite, and Minecraft have already laid the groundwork for persistent digital universes. Gamers have long understood the value of digital identities, virtual economies, and online socialization, making gaming platforms the natural entry points for wider Metaverse adoption.</p>
+          
+          <blockquote>"The Metaverse is not just the next chapter of the internet — it is the next chapter of human interaction, creativity, and experience."</blockquote>
+          
+          <h2>Social Interaction and Virtual Economies</h2>
+          <p>Beyond entertainment, the Metaverse redefines social connection and commerce. It facilitates virtual concerts, digital art galleries, and collaborative workspaces where geographical barriers are non-existent. Furthermore, virtual economies powered by blockchain technology and cryptocurrencies empower users to buy, sell, and trade digital real estate, clothing, and assets, creating a flourishing parallel economy.</p>
+          
+          <h2>Building the Metaverse: Technologies and Challenges</h2>
+          <p>Constructing a seamless, interconnected Metaverse requires tremendous technological leaps. We need ubiquitous high-speed internet, powerful edge computing, and advanced hardware to support photorealistic, low-latency experiences. Additionally, developers face significant challenges regarding interoperability — ensuring an avatar or asset can move seamlessly between different virtual worlds — as well as critical concerns surrounding digital privacy, security, and governance.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4">
+        <!-- Author Card -->
+        <div class="sidebar-card text-center">
+          <h5>About Author</h5>
+          <img src="assets/img/pic.png" alt="Utkarsh Shukla" class="author-photo">
+          <div class="author-name">Utkarsh Shukla</div>
+          <div class="author-role">Game Developer</div>
+          <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 12px; margin-bottom: 0;">Passionate game developer with expertise in Unity, AR/VR, and AI-driven interactive systems.</p>
+        </div>
+        
+        <!-- Recent Posts -->
+        <div class="sidebar-card">
+          <h5>Recent Posts</h5>
+          <a href="AIBlog.html" class="recent-post-link">
+            <i class="bi bi-chevron-right"></i>
+            <span>Future of Artificial Intelligence in the Gaming Industry</span>
+          </a>
+          <a href="NFT.html" class="recent-post-link">
+            <i class="bi bi-chevron-right"></i>
+            <span>Web3 Evolution: NFTs and Blockchain in Gaming</span>
+          </a>
+          <a href="metverse.html" class="recent-post-link">
+            <i class="bi bi-chevron-right"></i>
+            <span>Metaverse: Unlocking Boundless Realms, One Digital Step at a Time</span>
+          </a>
+        </div>
+        
+        <!-- Tags -->
+        <div class="sidebar-card">
+          <h5>Tags</h5>
+          <div>
+            <a href="#" class="tag-pill">Metaverse</a>
+            <a href="#" class="tag-pill">Virtual Reality</a>
+            <a href="#" class="tag-pill">Gaming</a>
+            <a href="#" class="tag-pill">Web3</a>
+            <a href="#" class="tag-pill">Digital Economy</a>
           </div>
         </div>
       </div>
-    </section><!-- End Blog Single Section -->
+    </div>
+  </main>
 
-  </main><!-- End #main -->
+  <a href="#" class="back-to-top active d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- ======= Footer ======= -->
-  <footer>
+  <!-- Footer -->
+  <footer class="blog-footer">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong></strong>. All Rights Reserved</p>
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-              Designed by <a href="">Utkarsh Shukla</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>&copy; Copyright <strong><span>Utkarsh Shukla</span></strong>. All Rights Reserved</p>
     </div>
-  </footer><!-- End  Footer -->
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  </footer>
+  
+  <!-- Scripts -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
