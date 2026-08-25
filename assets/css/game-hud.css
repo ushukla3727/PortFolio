@@ -1,0 +1,889 @@
+/*
+ * ============================================================
+ *  GAME DEV HUD THEME — Utkarsh Shukla Portfolio
+ *  Pure CSS — Zero extra dependencies
+ * ============================================================
+ */
+
+/* ============================================================
+   HUD 1. CUSTOM CROSSHAIR CURSOR
+   ============================================================ */
+*, *::before, *::after { cursor: none !important; }
+
+#hud-cursor-outer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 32px; height: 32px;
+  border: 1.5px solid rgba(124, 58, 237, 0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  mix-blend-mode: normal;
+}
+#hud-cursor-inner {
+  position: fixed;
+  top: 0; left: 0;
+  width: 5px; height: 5px;
+  background: var(--cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000000;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px var(--cyan), 0 0 12px var(--cyan);
+  transition: transform 0.08s ease;
+}
+/* Crosshair lines */
+#hud-cursor-outer::before,
+#hud-cursor-outer::after {
+  content: '';
+  position: absolute;
+  background: rgba(124, 58, 237, 0.5);
+}
+#hud-cursor-outer::before {
+  width: 1px; height: 8px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+#hud-cursor-outer::after {
+  width: 8px; height: 1px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Cursor hover state — triggered via JS class */
+body.cursor-hover #hud-cursor-outer {
+  width: 48px; height: 48px;
+  border-color: var(--cyan);
+  background: rgba(6, 182, 212, 0.06);
+}
+/* Cursor click state */
+body.cursor-click #hud-cursor-outer {
+  width: 20px; height: 20px;
+  border-color: var(--pink);
+  background: rgba(236, 72, 153, 0.15);
+}
+#hud-cursor-inner.clicked {
+  background: var(--pink);
+  box-shadow: 0 0 10px var(--pink);
+}
+
+@media (max-width: 768px) {
+  #hud-cursor-outer, #hud-cursor-inner { display: none; }
+  * { cursor: auto !important; }
+}
+
+/* ============================================================
+   HUD 2. CRT SCANLINES OVERLAY
+   ============================================================ */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  animation: scanlineMove 8s linear infinite;
+}
+@keyframes scanlineMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* RGB chromatic aberration flicker — very subtle */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 99997;
+  pointer-events: none;
+  background: transparent;
+  animation: crtFlicker 0.15s infinite;
+  opacity: 0.015;
+}
+@keyframes crtFlicker {
+  0%   { background: rgba(255,0,0,0.02); }
+  33%  { background: rgba(0,255,0,0.01); }
+  66%  { background: rgba(0,0,255,0.02); }
+  100% { background: transparent; }
+}
+
+/* ============================================================
+   HUD 3. HUD-STYLE NAVBAR
+   ============================================================ */
+#header {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 12px) 100%, 0 100%);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.2) !important;
+}
+
+/* Animated scan-line under navbar */
+#header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
+  animation: navScan 3s linear infinite;
+}
+@keyframes navScan {
+  0%   { left: -60%; }
+  100% { left: 100%; }
+}
+
+/* HUD Corner bracket on logo */
+.logo-link {
+  position: relative;
+}
+.logo-link::before,
+.logo-link::after {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+.logo-link::before {
+  top: -4px; left: -6px;
+  border-top: 1.5px solid var(--cyan);
+  border-left: 1.5px solid var(--cyan);
+}
+.logo-link::after {
+  bottom: -4px; right: -6px;
+  border-bottom: 1.5px solid var(--purple);
+  border-right: 1.5px solid var(--purple);
+}
+.logo-link:hover::before,
+.logo-link:hover::after { opacity: 1; width: 12px; height: 12px; }
+
+/* Nav link HUD style — monospace look with bracket hover */
+.navbar a.nav-link {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.8rem !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+}
+.navbar a.nav-link::before {
+  content: '[';
+  opacity: 0;
+  margin-right: 2px;
+  color: var(--cyan);
+  transition: opacity 0.2s ease;
+}
+.navbar a.nav-link.active::before,
+.navbar a.nav-link:hover::before { opacity: 1; }
+
+/* HUD status indicator — REMOVED (was overlapping Contact nav link) */
+
+/* ============================================================
+   HUD 4. GLITCH EFFECT ON HERO TITLE
+   ============================================================ */
+.hero-title {
+  position: relative;
+}
+.hero-title.glitch-active::before,
+.hero-title.glitch-active::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+.hero-title.glitch-active::before {
+  color: var(--cyan);
+  animation: glitchTop 0.3s ease-out forwards;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  -webkit-text-fill-color: var(--cyan);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+.hero-title.glitch-active::after {
+  color: var(--pink);
+  animation: glitchBottom 0.3s ease-out forwards;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  -webkit-text-fill-color: var(--pink);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+@keyframes glitchTop {
+  0%   { transform: translate(-3px, -2px) skew(-1deg); opacity: 0.8; }
+  25%  { transform: translate(3px, -1px)  skew(1deg);  opacity: 0.9; }
+  50%  { transform: translate(-2px, 2px)  skew(-0.5deg); opacity: 0.7; }
+  75%  { transform: translate(2px, 1px)   skew(0.5deg); opacity: 0.6; }
+  100% { transform: translate(0, 0);      opacity: 0; }
+}
+@keyframes glitchBottom {
+  0%   { transform: translate(3px, 2px)  skew(1deg);   opacity: 0.8; }
+  25%  { transform: translate(-3px, 1px) skew(-1deg);  opacity: 0.9; }
+  50%  { transform: translate(2px, -2px) skew(0.5deg); opacity: 0.7; }
+  75%  { transform: translate(-2px, -1px) skew(-0.5deg); opacity: 0.6; }
+  100% { transform: translate(0, 0);     opacity: 0; }
+}
+
+/* Constant subtle glitch on gradient text */
+.gradient-text {
+  animation: gradientShimmer 4s ease-in-out infinite;
+}
+@keyframes gradientShimmer {
+  0%, 90%, 100% { filter: none; }
+  92%  { filter: brightness(1.3) hue-rotate(20deg); }
+  94%  { filter: brightness(0.9) hue-rotate(-10deg); }
+  96%  { filter: brightness(1.2) hue-rotate(15deg); }
+}
+
+/* ============================================================
+   HUD 5. HUD CORNER DECORATORS ON CARDS
+   ============================================================ */
+.portfolio-card,
+.service-card,
+.exp-card,
+.blog-card,
+.testimonial-card,
+.about-photo-wrapper,
+.hero-stats {
+  position: relative;
+}
+
+.portfolio-card::before, .portfolio-card::after,
+.service-card::before,  .service-card::after,
+.exp-card::before,      .exp-card::after,
+.blog-card::before,     .blog-card::after {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  z-index: 2;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+/* Top-left corner */
+.portfolio-card::before,
+.service-card::before,
+.exp-card::before,
+.blog-card::before {
+  top: 6px; left: 6px;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+  opacity: 0.5;
+}
+/* Bottom-right corner */
+.portfolio-card::after,
+.service-card::after,
+.exp-card::after,
+.blog-card::after {
+  bottom: 6px; right: 6px;
+  border-bottom: 2px solid var(--purple);
+  border-right: 2px solid var(--purple);
+  opacity: 0.5;
+}
+/* Hover: corners glow & expand slightly */
+.portfolio-card:hover::before, .service-card:hover::before,
+.exp-card:hover::before, .blog-card:hover::before {
+  opacity: 1; width: 18px; height: 18px;
+  border-color: var(--cyan-light);
+  box-shadow: -2px -2px 8px rgba(6, 182, 212, 0.4);
+}
+.portfolio-card:hover::after, .service-card:hover::after,
+.exp-card:hover::after, .blog-card:hover::after {
+  opacity: 1; width: 18px; height: 18px;
+  border-color: var(--purple-light);
+  box-shadow: 2px 2px 8px rgba(124, 58, 237, 0.4);
+}
+
+/* ============================================================
+   HUD 6. GAME BOOT PRELOADER
+   ============================================================ */
+#preloader {
+  background: #05050d;
+  flex-direction: column;
+  gap: 0;
+}
+
+.preloader-inner { display: none !important; } /* hide old ring */
+
+.preloader-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 320px;
+}
+
+.preloader-logo-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 6px;
+  background: linear-gradient(135deg, var(--purple-light), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  animation: logoPulse 1s ease-in-out infinite alternate;
+}
+@keyframes logoPulse {
+  from { filter: brightness(1); }
+  to   { filter: brightness(1.4); }
+}
+
+.preloader-system-text {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: rgba(6, 182, 212, 0.7);
+  text-transform: uppercase;
+}
+
+.preloader-bar-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.preloader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  border-radius: 2px;
+  transition: width 0.15s linear;
+  box-shadow: 0 0 10px var(--cyan);
+  position: relative;
+}
+.preloader-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0;
+  width: 20px; height: 100%;
+  background: rgba(255,255,255,0.5);
+  filter: blur(4px);
+}
+
+.preloader-status {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: rgba(124, 58, 237, 0.8);
+  text-transform: uppercase;
+  min-height: 14px;
+  text-align: center;
+}
+.preloader-pct {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  color: var(--cyan);
+  letter-spacing: 1px;
+  min-width: 40px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+/* Corner brackets on preloader */
+#preloader::before,
+#preloader::after {
+  content: '';
+  position: absolute;
+  width: 24px; height: 24px;
+}
+#preloader::before {
+  top: 40px; left: 40px;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+  opacity: 0.5;
+}
+#preloader::after {
+  bottom: 40px; right: 40px;
+  border-bottom: 2px solid var(--purple);
+  border-right: 2px solid var(--purple);
+  opacity: 0.5;
+}
+
+.preloader-granted {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1rem;
+  letter-spacing: 6px;
+  color: #22c55e;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.7);
+}
+.preloader-granted.show { opacity: 1; }
+
+/* ============================================================
+   HUD 7. HUD SECTION HEADERS
+   ============================================================ */
+.section-tag {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 3px !important;
+  border-radius: 4px !important;
+  position: relative;
+}
+.section-tag::before { content: '// '; color: var(--cyan); opacity: 0.7; }
+
+/* Terminal cursor blink on section titles */
+.section-title::after {
+  content: '_';
+  display: inline-block;
+  color: var(--cyan);
+  opacity: 1;
+  margin-left: 4px;
+  animation: termBlink 1.2s step-start infinite;
+  font-weight: 300;
+  vertical-align: baseline;
+}
+@keyframes termBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* HUD scan lines flanking section title */
+.section-header {
+  position: relative;
+}
+.section-header::before,
+.section-header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 120px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--cyan), transparent);
+  opacity: 0.4;
+}
+.section-header::before { top: 0; }
+.section-header::after  { bottom: 0; }
+
+/* ============================================================
+   HUD 8. HEX/BADGE SKILL SECTION REDESIGN
+   ============================================================ */
+.skill-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 32px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  border-radius: 6px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.skill-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.skill-badge:hover {
+  border-color: var(--cyan);
+  color: var(--text);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.3);
+}
+.skill-badge:hover::before { opacity: 0.12; }
+
+.skill-badge .sb-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+  box-shadow: 0 0 4px var(--cyan);
+}
+.skill-badge.tier-1 { border-color: rgba(124, 58, 237, 0.4); }
+.skill-badge.tier-1 .sb-dot { background: var(--purple-light); box-shadow: 0 0 5px var(--purple); }
+.skill-badge.tier-2 { border-color: rgba(6, 182, 212, 0.3); }
+.skill-badge.tier-2 .sb-dot { background: var(--cyan); }
+.skill-badge.tier-3 { border-color: rgba(236, 72, 153, 0.25); }
+.skill-badge.tier-3 .sb-dot { background: var(--pink); box-shadow: 0 0 5px var(--pink); }
+
+/* Skill XP bar (replaces boring progress bar) */
+.skill-xp-wrap {
+  margin-bottom: 10px;
+}
+.skill-xp-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.skill-xp-name {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  font-family: 'Space Grotesk', monospace;
+  letter-spacing: 0.5px;
+}
+.skill-xp-rank {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.skill-xp-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 2px;
+  overflow: visible;
+  position: relative;
+}
+.skill-xp-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  transition: width 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  box-shadow: 0 0 6px var(--glow-c);
+}
+.skill-xp-fill::after {
+  content: '';
+  position: absolute;
+  right: -1px; top: -2px;
+  width: 4px; height: 8px;
+  background: var(--cyan);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--cyan);
+  animation: xpCursor 1s ease-in-out infinite alternate;
+}
+@keyframes xpCursor {
+  from { opacity: 1; box-shadow: 0 0 8px var(--cyan); }
+  to   { opacity: 0.4; box-shadow: 0 0 3px var(--cyan); }
+}
+
+/* ============================================================
+   HUD 9. 3D CARD TILT STYLES
+   ============================================================ */
+.portfolio-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.portfolio-card .portfolio-img-wrap {
+  transform: translateZ(8px);
+}
+.portfolio-card .portfolio-info {
+  transform: translateZ(4px);
+}
+
+/* ============================================================
+   HUD 10. HERO SECTION — ADDITIONAL HUD ELEMENTS
+   ============================================================ */
+
+/* HUD bracket corners around hero content */
+.hero-inner {
+  position: relative;
+}
+.hero-inner::before,
+.hero-inner::after {
+  content: '';
+  position: absolute;
+  width: 30px; height: 30px;
+  pointer-events: none;
+  opacity: 0.3;
+  animation: cornerPulse 3s ease-in-out infinite alternate;
+}
+.hero-inner::before {
+  top: -20px; left: -10px;
+  border-top: 2px solid var(--cyan);
+  border-left: 2px solid var(--cyan);
+}
+.hero-inner::after {
+  bottom: -20px; right: -10px;
+  border-bottom: 2px solid var(--purple);
+  border-right: 2px solid var(--purple);
+}
+@keyframes cornerPulse {
+  from { opacity: 0.2; }
+  to   { opacity: 0.7; }
+}
+
+/* Hero Badge — game HUD style */
+.hero-badge {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 2px !important;
+  border-radius: 4px !important;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+}
+
+/* Typed cursor style */
+.typed-cursor {
+  color: var(--cyan) !important;
+  animation: typedBlink 0.7s step-start infinite !important;
+}
+@keyframes typedBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================================
+   HUD 11. PORTFOLIO FILTER BUTTONS — GAME STYLE
+   ============================================================ */
+.filter-btn {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.72rem !important;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%) !important;
+  border-radius: 0 !important;
+  position: relative !important;
+}
+.filter-btn::before {
+  content: '◆ ';
+  opacity: 0;
+  font-size: 0.55rem;
+  transition: opacity 0.2s;
+}
+.filter-btn.active::before,
+.filter-btn:hover::before { opacity: 1; }
+
+/* ============================================================
+   HUD 12. EXPERIENCE TIMELINE — HUD STYLE
+   ============================================================ */
+.exp-dot {
+  position: relative;
+}
+.exp-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px; height: 24px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 50%;
+  animation: dotRing 2s ease-in-out infinite;
+}
+@keyframes dotRing {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50%       { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+}
+
+/* ============================================================
+   HUD 13. CONTACT FORM — HUD STYLE
+   ============================================================ */
+.form-input {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 0.5px !important;
+}
+.form-input:focus {
+  border-color: var(--cyan) !important;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.15) !important;
+}
+
+/* ============================================================
+   HUD 14. FOOTER — HUD STYLE
+   ============================================================ */
+.site-footer {
+  position: relative;
+}
+.footer-top-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--cyan), var(--purple), transparent);
+  animation: footerScan 4s linear infinite;
+  background-size: 200% 100%;
+}
+@keyframes footerScan {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+.footer-copy {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   HUD 15. BACK TO TOP — GAME STYLE
+   ============================================================ */
+.back-to-top {
+  border-radius: 4px !important;
+  clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%) !important;
+}
+
+/* ============================================================
+   HUD 16. SMOOTH SECTION TRANSITIONS — GRID OVERLAY
+   ============================================================ */
+.section,
+.alt-bg {
+  position: relative;
+}
+/* Subtle dot-grid pattern on sections */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(124,58,237,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+.section > * { position: relative; z-index: 1; }
+
+/* ============================================================
+   HUD 17. SKILL SECTION HEADING — HUD STYLE
+   ============================================================ */
+.skills-heading {
+  font-family: 'Space Grotesk', monospace !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-size: 0.7rem !important;
+  color: var(--cyan) !important;
+}
+.skills-heading::before { content: '>> '; color: var(--purple-light); }
+
+/* ============================================================
+   HUD 18. COUNTER SECTION — XP STYLE
+   ============================================================ */
+.counter-section {
+  position: relative;
+  overflow: hidden;
+}
+.counter-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 60px,
+    rgba(124,58,237,0.03) 60px,
+    rgba(124,58,237,0.03) 61px
+  );
+  pointer-events: none;
+}
+.counter-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   HUD 19. CUSTOM SCROLLBAR — HUD STYLE
+   ============================================================ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--purple), var(--cyan));
+  border-radius: 0;
+}
+
+/* ============================================================
+   HUD 20. PRELOADER HIDE TRANSITION
+   ============================================================ */
+#preloader.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* ============================================================
+   HUD 21. MOBILE FIXES
+   ============================================================ */
+
+/* Hide HUD cursor on touch devices */
+@media (max-width: 991px) {
+  #hud-cursor-outer,
+  #hud-cursor-inner { display: none !important; }
+  * { cursor: auto !important; }
+
+  /* Remove clip-path from navbar on mobile — causes layout issues */
+  #header {
+    clip-path: none !important;
+  }
+
+  /* Remove bracket prefix on mobile nav links */
+  .navbar a.nav-link::before { display: none !important; }
+
+  /* Mobile navbar scan-line — hide */
+  #header::after { display: none !important; }
+
+  /* Remove logo corner brackets on small screens */
+  .logo-link::before,
+  .logo-link::after { display: none; }
+
+  /* Fix section-title blink underscore spacing on mobile */
+  .section-title::after { display: none; }
+
+  /* Hero inner HUD corners — smaller on mobile */
+  .hero-inner::before,
+  .hero-inner::after { display: none; }
+
+  /* Hero badge — remove clip-path on mobile */
+  .hero-badge { clip-path: none !important; border-radius: 50px !important; }
+
+  /* Filter buttons — remove clip-path on mobile */
+  .filter-btn { clip-path: none !important; border-radius: 50px !important; }
+
+  /* Skill badge — remove clip-path on mobile */
+  .skill-badge { clip-path: none !important; }
+
+  /* Card corners — smaller on mobile */
+  .portfolio-card::before, .portfolio-card::after,
+  .service-card::before,  .service-card::after,
+  .exp-card::before,      .exp-card::after,
+  .blog-card::before,     .blog-card::after {
+    width: 10px; height: 10px;
+  }
+
+  /* Scanlines — reduce opacity on mobile for better readability */
+  body::after { opacity: 0.5; }
+  body::before { display: none; }
+
+  /* Preloader HUD — smaller on mobile */
+  .preloader-hud { width: 280px; }
+  .preloader-logo-text { font-size: 2rem; }
+
+  /* Back-to-top — restore border-radius on mobile */
+  .back-to-top { clip-path: none !important; border-radius: 50% !important; }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  /* Section dot grid — hide on very small screens for performance */
+  .section::before { display: none; }
+
+  /* Skill badges wrap — smaller gap */
+  .skill-badges-grid { gap: 7px; }
+  .skill-badge { font-size: 0.68rem; padding: 5px 11px; }
+
+  /* Section header scan lines — hide on small */
+  .section-header::before,
+  .section-header::after { display: none; }
+
+  /* Exp dot ring animation — hide on mobile for perf */
+  .exp-dot::before { display: none; }
+}

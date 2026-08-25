@@ -218,13 +218,18 @@
   });
 
   /**
-   * Preloader
+   * Preloader — handled by game-hud.js (game boot sequence)
+   * Fallback: remove after 5s if game-hud.js fails
    */
   let preloader = select('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
+    setTimeout(() => {
+      if (preloader && document.body.contains(preloader)) {
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => { if (preloader) preloader.remove(); }, 550);
+      }
+    }, 5000);
   }
 
   /**
