@@ -1,0 +1,9 @@
+﻿# Robots.txt — Utkarsh Shukla Portfolio
+# https://www.utkarsh.work.gd/
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.utkarsh.work.gd/sitemap.xml
